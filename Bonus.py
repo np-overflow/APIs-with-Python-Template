@@ -66,7 +66,7 @@ def get_pokemon_data(pokemon_name: str) -> str:
 # The model may call the tool zero, one, or multiple times before answering
 # We accumulate tokens across all API calls within this single user turn
 # --------------------------------------------------------------------------
-def ask_cerebras(prompt: str, model="llama3.1-8b", max_tokens: int = 150, temperature: float = 0.7):
+def ask_cerebras(prompt: str, model="gpt-oss-120b", max_tokens: int = 150, temperature: float = 0.7):
     total_tokens_used = 0
     messages = [
         {

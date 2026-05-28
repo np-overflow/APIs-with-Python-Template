@@ -23,27 +23,13 @@ client = Cerebras(
 
 def ask_cerebras(prompt: str, model: str = "gpt-oss-120b", max_tokens: int = 150, temperature: float = 0.7) -> dict[str,str]:
     response = client.chat.completions.create(
-        model=model,
-        messages=[
-            {
-                "role": "system",
-                "content": (
-                    "You are a helpful assistant. When the user message contains extra "
-                    "data (in JSON or list form), use that data to answer the question "
-                    "accurately and concisely. If no data is given, answer from your own knowledge."
-                )
-            },
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        temperature=temperature,
-        max_tokens=max_tokens,
-    )
-    # TODO 3: From Practical_2.py, Convert the AI's response message to a JSON string
+        # TODO 3: Field in the arguments and the prompt for the Cerebras API
 
-    # TODO 4: From Practical_2.py, Parse the JSON string into a Python dictionary to easily access the 'content' field
+    )
+    # TODO 4: From Practical_2.py, Convert the AI's response message to a JSON string
+
+    # TODO 5: From Practical_2.py, Parse the JSON string into a Python dictionary to easily access the 'content' field
+    # TODO  : json.loads(answer_json_str)
 
     return answer_dict
 
@@ -58,7 +44,7 @@ question = input("\nYou: ").strip()
 full_prompt = f"Additional data:\n{context_data}\n\nQuestion: {question}"
 
 try:
-    # TODO 5: From Practical_2.py, Use the function ask_cerebras() and print the Bot's reply out
+    # TODO 6: From Practical_2.py, Use the function ask_cerebras() and print the Bot's reply out
     # TODO:   print example: "Bot: Hello I am a AI bot"
 
 
